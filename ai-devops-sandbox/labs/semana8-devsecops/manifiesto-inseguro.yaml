@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orders-api
+  template:
+    metadata:
+      labels:
+        app: orders-api
+    spec:
+      containers:
+        - name: orders-api
+          image: orders-api:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DATABASE_URL
+              value: "postgres://admin:SuperSecret123@prod-db.internal.company.com:5432/orders"
+            - name: STRIPE_API_KEY
+              value: "sk_live_51H8x9K2example_do_not_use_real_key"
+          securityContext:
+            privileged: true
+            runAsUser: 0
+          resources: {}

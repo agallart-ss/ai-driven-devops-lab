@@ -1,0 +1,24 @@
+name: CI (con bug intencional)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # BUG: los tests corren ANTES de instalar las dependencias
+      - name: Correr tests
+        run: python -m pytest labs/semana2-desarrollo-testing/tests/ -v
+
+      - name: Instalar dependencias
+        run: |
+          pip install -r app/api/requirements.txt
+          pip install -r labs/semana2-desarrollo-testing/requirements.txt
