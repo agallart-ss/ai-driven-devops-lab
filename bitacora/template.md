@@ -48,7 +48,7 @@
 ## Semana 2 — Desarrollo asistido por IA / Testing y calidad con IA
 
 **¿Usaste IA para acelerar programación, debugging, documentación o revisión de código esta semana? ¿O para generar/mejorar casos de prueba?**
-> Si sí, describe cómo. Si no aplicó a tu proyecto, explica por qué (ej. tu problema es de infraestructura, no de código de aplicación).
+> Si sí, describe cómo. Si no aplicó a tu proyecto, explica por qué (ej. mi problema no tiene scripts o código de aplicación).
 
 **Contexto que le diste a la IA**
 >
